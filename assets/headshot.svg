@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="portraitTitle">
+  <title id="portraitTitle">Portrait slot placeholder — dark glass frame with viewfinder brackets and EF monogram</title>
+  <defs>
+    <linearGradient id="panelFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10131a"/>
+      <stop offset="55%" stop-color="#0b0d12"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </linearGradient>
+    <linearGradient id="panelBorder" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f8bff"/>
+      <stop offset="45%" stop-color="#2f6bff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1b3fd1" stop-opacity="0.8"/>
+    </linearGradient>
+    <radialGradient id="panelAurora" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#2f6bff" stop-opacity="0.42"/>
+      <stop offset="60%" stop-color="#1b3fd1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1b3fd1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="monogram" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f6fb"/>
+      <stop offset="100%" stop-color="#4f8bff"/>
+    </linearGradient>
+    <filter id="hsBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+  </defs>
+
+  <!-- true-black field -->
+  <rect width="640" height="720" fill="#050507"/>
+
+  <!-- aurora behind panel -->
+  <ellipse cx="320" cy="290" rx="260" ry="240" fill="url(#panelAurora)" filter="url(#hsBlur)"/>
+
+  <!-- glass panel -->
+  <rect x="60" y="60" width="520" height="600" rx="22" fill="url(#panelFill)"/>
+  <rect x="60" y="60" width="520" height="600" rx="22" fill="none" stroke="url(#panelBorder)" stroke-width="1.5" opacity="0.9"/>
+  <rect x="72" y="72" width="496" height="576" rx="16" fill="none" stroke="#4f8bff" stroke-width="1" opacity="0.12"/>
+
+  <!-- corner viewfinder brackets -->
+  <g stroke="#4f8bff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85">
+    <path d="M 104 132 L 104 104 L 132 104"/>
+    <path d="M 536 132 L 536 104 L 508 104"/>
+    <path d="M 104 588 L 104 616 L 132 616"/>
+    <path d="M 536 588 L 536 616 L 508 616"/>
+  </g>
+
+  <!-- center crosshair tick -->
+  <g stroke="#4f8bff" stroke-width="1.2" opacity="0.35">
+    <line x1="320" y1="286" x2="320" y2="306"/>
+    <line x1="310" y1="296" x2="330" y2="296"/>
+  </g>
+
+  <!-- EF monogram -->
+  <text x="320" y="360" text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    font-size="180" font-weight="800" letter-spacing="-6"
+    fill="url(#monogram)" opacity="0.16">EF</text>
+
+  <!-- portrait label -->
+  <text x="320" y="452" text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    font-size="18" font-weight="600" letter-spacing="6"
+    fill="#6b7385">[ PORTRAIT ]</text>
+
+  <!-- thin accent rule under label -->
+  <rect x="284" y="474" width="72" height="2" rx="1" fill="#2f6bff" opacity="0.5"/>
+</svg>
