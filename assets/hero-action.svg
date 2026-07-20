@@ -1,58 +1,119 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="heroTitle">
-  <title id="heroTitle">Hero image placeholder — dynamic jumper in motion</title>
+  <title id="heroTitle">Atmospheric hero backdrop — aurora glow, perspective grid, and a parabolic jump trajectory</title>
   <defs>
-    <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1c2430"/>
-      <stop offset="0.55" stop-color="#151a22"/>
-      <stop offset="1" stop-color="#0d1119"/>
+    <!-- Deep near-black base -->
+    <radialGradient id="baseGlow" cx="72%" cy="26%" r="90%">
+      <stop offset="0%" stop-color="#0c1220"/>
+      <stop offset="42%" stop-color="#070a12"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </radialGradient>
+    <linearGradient id="baseVertical" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#060709" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#050507" stop-opacity="0.9"/>
     </linearGradient>
-    <linearGradient id="streakBlue" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0055A2" stop-opacity="0"/>
-      <stop offset="1" stop-color="#0055A2" stop-opacity="0.85"/>
+
+    <!-- Aurora orbs -->
+    <radialGradient id="auroraTR" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f8bff" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#2f6bff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#2f6bff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraBL" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1b3fd1" stop-opacity="0.4"/>
+      <stop offset="55%" stop-color="#1b3fd1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1b3fd1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Arc gradient + glow -->
+    <linearGradient id="arcStroke" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b3fd1" stop-opacity="0.15"/>
+      <stop offset="35%" stop-color="#2f6bff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#4f8bff"/>
     </linearGradient>
-    <linearGradient id="streakGold" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#E5A823" stop-opacity="0"/>
-      <stop offset="1" stop-color="#E5A823" stop-opacity="0.9"/>
+    <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="20%" stop-color="#4f8bff"/>
+      <stop offset="55%" stop-color="#2f6bff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#2f6bff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="arcBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4f8bff" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#4f8bff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#4f8bff" stop-opacity="0.32"/>
+    </linearGradient>
+    <linearGradient id="baselineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2f6bff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#4f8bff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2f6bff" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <!-- Charcoal backdrop -->
-  <rect width="1600" height="900" fill="url(#heroBg)"/>
+  <!-- Base -->
+  <rect width="1600" height="900" fill="url(#baseGlow)"/>
+  <rect width="1600" height="900" fill="url(#baseVertical)"/>
 
-  <!-- Abstract angular runway planes -->
-  <polygon points="0,900 700,900 200,420" fill="#0055A2" opacity="0.10"/>
-  <polygon points="1600,900 900,900 1400,360" fill="#E5A823" opacity="0.07"/>
-  <polygon points="0,640 1600,300 1600,360 0,720" fill="#0055A2" opacity="0.06"/>
+  <!-- Aurora glows -->
+  <ellipse cx="1240" cy="200" rx="520" ry="380" fill="url(#auroraTR)" filter="url(#softBlur)"/>
+  <ellipse cx="260" cy="820" rx="460" ry="320" fill="url(#auroraBL)" filter="url(#softBlur)"/>
 
-  <!-- Motion streaks -->
-  <g>
-    <rect x="120" y="300" width="620" height="10" rx="5" fill="url(#streakBlue)"/>
-    <rect x="220" y="360" width="520" height="7" rx="3.5" fill="url(#streakGold)"/>
-    <rect x="80" y="430" width="700" height="6" rx="3" fill="url(#streakBlue)"/>
-    <rect x="300" y="520" width="460" height="8" rx="4" fill="url(#streakGold)" opacity="0.7"/>
+  <!-- Perspective / blueprint grid converging to vanishing point (~800,150) -->
+  <g stroke="url(#gridFade)" stroke-width="1" opacity="0.7">
+    <!-- converging longitudinal lines -->
+    <line x1="800" y1="150" x2="-260" y2="900"/>
+    <line x1="800" y1="150" x2="120" y2="900"/>
+    <line x1="800" y1="150" x2="430" y2="900"/>
+    <line x1="800" y1="150" x2="680" y2="900"/>
+    <line x1="800" y1="150" x2="920" y2="900"/>
+    <line x1="800" y1="150" x2="1170" y2="900"/>
+    <line x1="800" y1="150" x2="1480" y2="900"/>
+    <line x1="800" y1="150" x2="1860" y2="900"/>
+    <!-- horizontal depth lines (closer spacing near horizon) -->
+    <line x1="0" y1="470" x2="1600" y2="470" opacity="0.5"/>
+    <line x1="0" y1="540" x2="1600" y2="540" opacity="0.6"/>
+    <line x1="0" y1="625" x2="1600" y2="625" opacity="0.7"/>
+    <line x1="0" y1="730" x2="1600" y2="730" opacity="0.85"/>
+    <line x1="0" y1="860" x2="1600" y2="860"/>
   </g>
 
-  <!-- Stylized jumper mid-flight (geometric silhouette) -->
-  <g transform="translate(880 210)" fill="#E5A823">
-    <!-- trail glow -->
-    <path d="M-120 300 L60 120 L120 150 L-70 340 Z" fill="#0055A2" opacity="0.25"/>
-    <!-- head -->
-    <circle cx="250" cy="70" r="42"/>
-    <!-- torso -->
-    <path d="M210 110 L300 150 L270 300 L200 280 Z"/>
-    <!-- leading arm -->
-    <path d="M300 150 L430 90 L448 122 L318 190 Z"/>
-    <!-- trailing arm -->
-    <path d="M212 130 L110 210 L96 178 L196 100 Z"/>
-    <!-- lead leg extended -->
-    <path d="M262 290 L400 360 L384 398 L238 330 Z"/>
-    <!-- trail leg tucked -->
-    <path d="M214 280 L150 400 L188 418 L262 320 Z"/>
+  <!-- Baseline -->
+  <rect x="120" y="742" width="1360" height="2" fill="url(#baselineGrad)"/>
+  <!-- distance tick markers along baseline -->
+  <g stroke="#4f8bff" stroke-width="1.5" opacity="0.45">
+    <line x1="300" y1="736" x2="300" y2="750"/>
+    <line x1="520" y1="736" x2="520" y2="750"/>
+    <line x1="740" y1="736" x2="740" y2="750"/>
+    <line x1="960" y1="736" x2="960" y2="750"/>
+    <line x1="1180" y1="734" x2="1180" y2="752"/>
+    <line x1="1400" y1="732" x2="1400" y2="754"/>
   </g>
 
-  <!-- Sand pit line -->
-  <rect x="0" y="820" width="1600" height="80" fill="#E5A823" opacity="0.05"/>
+  <!-- Parabolic jump trajectory: launch left-baseline, apex mid, land right -->
+  <g fill="none" stroke-linecap="round">
+    <!-- glow underlay -->
+    <path d="M 300 742 Q 830 120 1400 742" stroke="url(#arcStroke)" stroke-width="10" opacity="0.5" filter="url(#arcBlur)"/>
+    <!-- crisp arc -->
+    <path d="M 300 742 Q 830 120 1400 742" stroke="url(#arcStroke)" stroke-width="3"/>
+    <!-- faint dashed guide echo -->
+    <path d="M 300 742 Q 830 120 1400 742" stroke="#4f8bff" stroke-width="1" stroke-dasharray="2 12" opacity="0.35"/>
+  </g>
 
-  <!-- Placeholder label -->
-  <text x="48" y="856" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#ffffff" opacity="0.30" letter-spacing="1">[hero image placeholder]</text>
+  <!-- Apex glowing dot -->
+  <circle cx="850" cy="304" r="46" fill="url(#dotGlow)"/>
+  <circle cx="850" cy="304" r="6" fill="#ffffff"/>
+  <circle cx="850" cy="304" r="12" fill="none" stroke="#4f8bff" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Leading dot at landing end -->
+  <circle cx="1400" cy="742" r="30" fill="url(#dotGlow)" opacity="0.85"/>
+  <circle cx="1400" cy="742" r="4.5" fill="#ffffff"/>
+
+  <!-- Vignette to keep it dim behind text -->
+  <rect width="1600" height="900" fill="url(#baseVertical)" opacity="0.35"/>
 </svg>

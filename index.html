@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050507" />
   <title>Ethan Fong — D1 Triple Jump &amp; Long Jump Coach</title>
   <meta
     name="description"
-    content="Train with Ethan Fong, a Division I triple jump & long jump athlete at San José State University. Youth jumps coaching in technique, speed, and plyometrics."
+    content="Train with Ethan Fong, a Division I triple jump & long jump athlete at San José State University. Elite youth jumps coaching — technique, speed, and plyometric power."
   />
   <link rel="preconnect" href="https://api.web3forms.com" />
   <link rel="stylesheet" href="css/styles.css" />
@@ -14,10 +15,18 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Ambient background layers (decorative) -->
+  <div class="bg-layers" aria-hidden="true">
+    <div class="grid-overlay"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="grain"></div>
+  </div>
+
   <!-- ============ HEADER / NAV ============ -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a class="brand" href="#hero">
+      <a class="brand" href="#hero" aria-label="Ethan Fong — home">
         <span class="brand-mark" aria-hidden="true">EF</span>
         <span class="brand-name">Ethan Fong</span>
       </a>
@@ -45,58 +54,69 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <img src="assets/hero-action.svg" alt="" class="hero-bg-img" />
+      <div class="hero-visual" aria-hidden="true">
+        <img src="assets/hero-action.svg" alt="" class="hero-visual-img" />
       </div>
-      <div class="container hero-inner reveal">
-        <p class="hero-eyebrow">San José State University · NCAA Division I</p>
-        <h1 class="hero-title">Ethan Fong</h1>
-        <p class="hero-tagline">D1 Triple Jump &amp; Long Jump Coach @ San José State</p>
-        <p class="hero-sub">
-          Personalized jumps coaching for youth athletes — technique, speed, and
-          plyometric power from a competing Division I jumper.
+      <div class="container hero-inner">
+        <p class="hero-eyebrow reveal">San José State University · NCAA Division I</p>
+        <h1 class="hero-title reveal" data-delay="1">
+          <span class="line">Ethan Fong</span>
+        </h1>
+        <p class="hero-tagline reveal" data-delay="2">
+          D1 <span class="grad">Triple Jump</span> &amp; <span class="grad">Long Jump</span> Coach
+          <span class="hero-tagline-sub">@ San José State</span>
         </p>
-        <div class="hero-actions">
+        <p class="hero-sub reveal" data-delay="3">
+          Personalized jumps coaching for youth athletes — technique, speed, and
+          plyometric power, taught by a competing Division I jumper.
+        </p>
+        <div class="hero-actions reveal" data-delay="4">
           <a class="btn btn-primary btn-lg" href="#quiz">Take the Inquiry Quiz</a>
           <a class="btn btn-ghost btn-lg" href="#program">Explore the Program</a>
         </div>
-        <p class="hero-note">Takes about 2 minutes · No commitment</p>
+        <p class="hero-note reveal" data-delay="5">≈ 2 minutes · No commitment</p>
       </div>
+      <a class="hero-scroll reveal" data-delay="6" href="#bio" aria-label="Scroll to about">
+        <span></span>
+      </a>
     </section>
 
     <!-- ============ BIO ============ -->
     <section class="section bio" id="bio">
       <div class="container bio-grid">
         <div class="bio-photo reveal">
-          <img src="assets/headshot.svg" alt="[Headshot placeholder — Ethan Fong]" />
-          <span class="photo-tag">[headshot placeholder]</span>
+          <img src="assets/headshot.svg" alt="[Portrait placeholder — Ethan Fong]" />
+          <span class="photo-tag">[ headshot placeholder ]</span>
         </div>
-        <div class="bio-copy reveal">
-          <p class="eyebrow">Meet Your Coach</p>
-          <h2>A Division I jumper in your corner</h2>
-          <p class="lead">
+        <div class="bio-copy">
+          <div class="section-head">
+            <span class="section-index" aria-hidden="true">01</span>
+            <p class="eyebrow reveal">Meet Your Coach</p>
+          </div>
+          <h2 class="reveal">A Division I jumper<br />in your corner</h2>
+          <p class="lead reveal">
             Ethan Fong competes in the triple jump and long jump for San José State
             University. He coaches the same fundamentals that move him down the runway —
             translated for developing youth athletes.
           </p>
-          <p class="muted">[bio placeholder — add Ethan's background, training story, and coaching philosophy here.]</p>
+          <p class="muted reveal">[bio placeholder — add Ethan's background, training story, and coaching philosophy here.]</p>
 
-          <div class="stat-tiles">
+          <div class="stat-tiles reveal">
             <div class="stat-tile">
               <span class="stat-label">Triple Jump PR</span>
-              <span class="stat-value">[PR placeholder]</span>
+              <span class="stat-value">[PR]</span>
             </div>
             <div class="stat-tile">
               <span class="stat-label">Long Jump PR</span>
-              <span class="stat-value">[PR placeholder]</span>
+              <span class="stat-value">[PR]</span>
             </div>
             <div class="stat-tile">
               <span class="stat-label">Division</span>
-              <span class="stat-value">NCAA D1</span>
+              <span class="stat-value" data-count="1" data-suffix="">D1</span>
             </div>
           </div>
 
-          <ul class="accolades">
+          <ul class="accolades reveal">
             <li>[accolade placeholder]</li>
             <li>[accolade placeholder]</li>
             <li>[accolade placeholder]</li>
@@ -108,35 +128,36 @@
     <!-- ============ PROGRAM ============ -->
     <section class="section program" id="program">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
+          <span class="section-index" aria-hidden="true">02</span>
           <p class="eyebrow">The Program</p>
           <h2>Coaching built around the jump</h2>
           <p class="section-intro">
             A complete development approach for young triple &amp; long jumpers — from the
-            approach run to the landing pit. Here's what we work on.
+            first step of the approach to the mark in the pit.
           </p>
         </div>
 
-        <div class="cards reveal">
+        <div class="cards bento reveal">
           <article class="card">
-            <div class="card-icon" aria-hidden="true">◇</div>
+            <span class="card-num" aria-hidden="true">01</span>
             <h3>Technique</h3>
             <p>Approach, takeoff, and in-air mechanics broken down step by step and rebuilt for consistency and distance.</p>
           </article>
           <article class="card">
-            <div class="card-icon" aria-hidden="true">➔</div>
+            <span class="card-num" aria-hidden="true">02</span>
             <h3>Approach &amp; Rhythm</h3>
             <p>Dialing in a repeatable run-up so every attempt hits the board with speed and control.</p>
           </article>
           <article class="card">
-            <div class="card-icon" aria-hidden="true">⚡</div>
+            <span class="card-num" aria-hidden="true">03</span>
             <h3>Speed Development</h3>
             <p>Runway acceleration and top-end speed work — the engine behind every big mark.</p>
           </article>
           <article class="card">
-            <div class="card-icon" aria-hidden="true">△</div>
+            <span class="card-num" aria-hidden="true">04</span>
             <h3>Plyometrics &amp; Power</h3>
-            <p>Bounding, hops, and explosive strength to turn speed into elastic, powerful jumps.</p>
+            <p>Bounding, hops, and explosive strength that turn speed into elastic, powerful jumps.</p>
           </article>
         </div>
 
@@ -147,7 +168,7 @@
           </div>
           <div class="meta-block">
             <h4>Who it's for</h4>
-            <p>Youth and high-school athletes serious about improving their triple jump and long jump — from first-season beginners to competitive jumpers chasing a new PR.</p>
+            <p>Youth and high-school athletes serious about their triple jump and long jump — from first-season beginners to competitive jumpers chasing a new PR.</p>
           </div>
         </div>
       </div>
@@ -156,21 +177,25 @@
     <!-- ============ TESTIMONIALS ============ -->
     <section class="section testimonials" id="testimonials">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
+          <span class="section-index" aria-hidden="true">03</span>
           <p class="eyebrow">Testimonials</p>
           <h2>What athletes &amp; parents say</h2>
         </div>
         <div class="quote-grid reveal">
           <figure class="quote-card">
-            <blockquote>"[testimonial placeholder — athlete quote about progress, coaching, or results.]"</blockquote>
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>[testimonial placeholder — athlete quote about progress, coaching, or results.]</blockquote>
             <figcaption><span class="quote-name">[Athlete name]</span><span class="quote-role tag tag-athlete">Athlete</span></figcaption>
           </figure>
           <figure class="quote-card">
-            <blockquote>"[testimonial placeholder — parent quote about experience and improvement.]"</blockquote>
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>[testimonial placeholder — parent quote about experience and improvement.]</blockquote>
             <figcaption><span class="quote-name">[Parent name]</span><span class="quote-role tag tag-parent">Parent</span></figcaption>
           </figure>
           <figure class="quote-card">
-            <blockquote>"[testimonial placeholder — athlete quote about confidence and technique.]"</blockquote>
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>[testimonial placeholder — athlete quote about confidence and technique.]</blockquote>
             <figcaption><span class="quote-name">[Athlete name]</span><span class="quote-role tag tag-athlete">Athlete</span></figcaption>
           </figure>
         </div>
@@ -180,7 +205,8 @@
     <!-- ============ RESULTS ============ -->
     <section class="section results" id="results">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
+          <span class="section-index" aria-hidden="true">04</span>
           <p class="eyebrow">Progress &amp; Results</p>
           <h2>Marks that move</h2>
           <p class="section-intro">Real improvement comes from consistent work. Drop in before/after clips and mark progressions here.</p>
@@ -188,26 +214,26 @@
 
         <div class="results-grid reveal">
           <figure class="ba-card">
-            <img src="assets/before-after.svg" alt="[Before/after placeholder]" />
+            <img src="assets/before-after.svg" alt="[Before/after progression placeholder]" />
             <figcaption>[caption placeholder — e.g. "Athlete name: +[X] ft in one season."]</figcaption>
           </figure>
           <figure class="ba-card">
-            <img src="assets/before-after.svg" alt="[Before/after placeholder]" />
+            <img src="assets/before-after.svg" alt="[Before/after progression placeholder]" />
             <figcaption>[caption placeholder — technique before/after.]</figcaption>
           </figure>
         </div>
 
         <div class="highlight-tiles reveal">
           <div class="highlight-tile">
-            <span class="highlight-value">+[X] ft</span>
+            <span class="highlight-value" data-count="0" data-prefix="+" data-suffix=" ft">+[X] ft</span>
             <span class="highlight-label">[mark improvement placeholder]</span>
           </div>
           <div class="highlight-tile">
-            <span class="highlight-value">[X] wks</span>
+            <span class="highlight-value" data-count="0" data-suffix=" wks">[X] wks</span>
             <span class="highlight-label">[commitment placeholder]</span>
           </div>
           <div class="highlight-tile">
-            <span class="highlight-value">[X]+</span>
+            <span class="highlight-value" data-count="0" data-suffix="+">[X]+</span>
             <span class="highlight-label">[athletes coached placeholder]</span>
           </div>
         </div>
@@ -217,7 +243,8 @@
     <!-- ============ INQUIRY QUIZ ============ -->
     <section class="section quiz-section" id="quiz">
       <div class="container quiz-wrap">
-        <div class="section-head reveal">
+        <div class="section-head center reveal">
+          <span class="section-index" aria-hidden="true">05</span>
           <p class="eyebrow">Get Started</p>
           <h2>Inquiry Quiz</h2>
           <p class="section-intro">A few quick questions so Ethan can understand your goals. He'll reach out personally.</p>

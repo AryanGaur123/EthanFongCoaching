@@ -1,42 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="baTitle">
-  <title id="baTitle">Before and after result placeholder</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="chartTitle">
+  <title id="chartTitle">Results progression chart — an ascending trend from before to after</title>
   <defs>
-    <linearGradient id="baBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1c2430"/>
-      <stop offset="1" stop-color="#151a22"/>
+    <linearGradient id="cardFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0d12"/>
+      <stop offset="100%" stop-color="#070a12"/>
     </linearGradient>
+    <linearGradient id="cardBorder" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f6bff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1b3fd1" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f6bff" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#2f6bff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b3fd1"/>
+      <stop offset="55%" stop-color="#2f6bff"/>
+      <stop offset="100%" stop-color="#4f8bff"/>
+    </linearGradient>
+    <radialGradient id="peakGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="22%" stop-color="#4f8bff"/>
+      <stop offset="60%" stop-color="#2f6bff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2f6bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chipFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f6bff"/>
+      <stop offset="100%" stop-color="#1b3fd1"/>
+    </linearGradient>
+    <filter id="baBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
   </defs>
 
-  <rect width="800" height="500" fill="url(#baBg)"/>
+  <!-- field + card -->
+  <rect width="800" height="500" fill="#050507"/>
+  <rect x="24" y="24" width="752" height="452" rx="20" fill="url(#cardFill)"/>
+  <rect x="24" y="24" width="752" height="452" rx="20" fill="none" stroke="url(#cardBorder)" stroke-width="1.2"/>
 
-  <!-- Left / BEFORE half -->
-  <rect x="0" y="0" width="400" height="500" fill="#0055A2" opacity="0.08"/>
-  <text x="200" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="bold" fill="#ffffff" opacity="0.55" letter-spacing="3">BEFORE</text>
-
-  <!-- Right / AFTER half -->
-  <rect x="400" y="0" width="400" height="500" fill="#E5A823" opacity="0.08"/>
-  <text x="600" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="bold" fill="#E5A823" opacity="0.85" letter-spacing="3">AFTER</text>
-
-  <!-- Baseline -->
-  <rect x="60" y="392" width="680" height="4" fill="#ffffff" opacity="0.25"/>
-
-  <!-- BEFORE bar (shorter) -->
-  <rect x="130" y="272" width="140" height="120" rx="6" fill="#0055A2" opacity="0.75"/>
-  <text x="200" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#ffffff" opacity="0.6">[mark]</text>
-
-  <!-- AFTER bar (taller) -->
-  <rect x="530" y="152" width="140" height="240" rx="6" fill="#E5A823" opacity="0.9"/>
-  <text x="600" y="130" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#E5A823" opacity="0.9">[mark]</text>
-
-  <!-- Dividing line -->
-  <line x1="400" y1="30" x2="400" y2="470" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="8 8"/>
-
-  <!-- Progression arrow across the divide -->
-  <g stroke="#E5A823" stroke-width="5" fill="none" opacity="0.9">
-    <line x1="300" y1="210" x2="500" y2="210"/>
-    <polyline points="478,194 502,210 478,226"/>
+  <!-- faint grid -->
+  <g stroke="#4f8bff" stroke-width="1" opacity="0.08">
+    <line x1="72" y1="120" x2="728" y2="120"/>
+    <line x1="72" y1="200" x2="728" y2="200"/>
+    <line x1="72" y1="280" x2="728" y2="280"/>
+    <line x1="72" y1="360" x2="728" y2="360"/>
+    <line x1="200" y1="80" x2="200" y2="392"/>
+    <line x1="360" y1="80" x2="360" y2="392"/>
+    <line x1="520" y1="80" x2="520" y2="392"/>
+    <line x1="640" y1="80" x2="640" y2="392"/>
   </g>
 
-  <!-- Placeholder label -->
-  <text x="400" y="452" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#ffffff" opacity="0.55" letter-spacing="1">[before / after placeholder]</text>
+  <!-- baseline axis -->
+  <line x1="72" y1="392" x2="728" y2="392" stroke="#3a4051" stroke-width="1.5"/>
+
+  <!-- ascending area under the line -->
+  <path d="M 96 356 C 220 344, 300 320, 400 262 S 600 150, 704 96 L 704 392 L 96 392 Z" fill="url(#areaFill)"/>
+
+  <!-- glow underlay of line -->
+  <path d="M 96 356 C 220 344, 300 320, 400 262 S 600 150, 704 96" fill="none" stroke="url(#lineGrad)" stroke-width="8" opacity="0.5" filter="url(#baBlur)" stroke-linecap="round"/>
+  <!-- crisp ascending line -->
+  <path d="M 96 356 C 220 344, 300 320, 400 262 S 600 150, 704 96" fill="none" stroke="url(#lineGrad)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- start node -->
+  <circle cx="96" cy="356" r="5" fill="#1b3fd1"/>
+  <circle cx="96" cy="356" r="5" fill="none" stroke="#4f8bff" stroke-width="1" opacity="0.6"/>
+
+  <!-- peak node with glow -->
+  <circle cx="704" cy="96" r="34" fill="url(#peakGlow)"/>
+  <circle cx="704" cy="96" r="6" fill="#ffffff"/>
+  <circle cx="704" cy="96" r="12" fill="none" stroke="#4f8bff" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- delta chip near top of rise -->
+  <g>
+    <rect x="556" y="118" width="96" height="34" rx="17" fill="url(#chipFill)"/>
+    <rect x="556" y="118" width="96" height="34" rx="17" fill="none" stroke="#4f8bff" stroke-width="1" opacity="0.6"/>
+    <text x="604" y="141" text-anchor="middle"
+      font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+      font-size="17" font-weight="700" letter-spacing="1" fill="#f4f6fb">+[  ]</text>
+  </g>
+
+  <!-- axis labels -->
+  <text x="96" y="428" text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    font-size="15" font-weight="600" letter-spacing="4" fill="#6b7385">BEFORE</text>
+  <text x="704" y="428" text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    font-size="15" font-weight="600" letter-spacing="4" fill="#b6bdcc">AFTER</text>
 </svg>
